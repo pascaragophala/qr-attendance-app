@@ -73,6 +73,17 @@ form_html = """
 {% endif %}
 """
 
+@app.route('/attendance')
+def view_attendance():
+    try:
+        df = pd.read_csv('attendance.csv')
+        return render_template_string("""
+            <h2>📋 Attendance Records</h2>
+            {{ table | safe }}
+        """, table=df.to_html(index=False))
+    except FileNotFoundError:
+        return "<h3>No attendance records yet.</h3>"
+        
 @app.route("/", methods=["GET", "POST"])
 def index():
     session_id, expires_at = load_session()
