@@ -1,7 +1,7 @@
 # requirements.txt
 Flask
 Flask-QRcode
-pandas==2.0.3
-pytz==2023.3
-python-dotenv==1.0.0
-gunicorn==20.1.0
+pandas
+pytz
+python-dotenv
+gunicorn
