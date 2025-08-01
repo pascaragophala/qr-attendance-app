@@ -1,7 +1,10 @@
-# requirements.txt
-Flask
+Flask==
 Flask-QRcode
 pandas
 pytz
 python-dotenv
 gunicorn
+numpy
+Werkzeug
+Jinja2
+MarkupSafe
