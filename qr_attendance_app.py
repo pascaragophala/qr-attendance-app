@@ -1,4 +1,3 @@
-# qr_attendance_app.py
 from flask import Flask, request, render_template, redirect, url_for, send_file
 from flask_qrcode import QRcode
 import pandas as pd
@@ -20,7 +19,7 @@ location = "STADIO Centurion, Room BL7"
 # Initialize files
 def init_files():
     if not os.path.exists(attendance_file):
-        df = pd.read_csv(attendance_file) if os.path.exists(attendance_file) else pd.DataFrame({
+        df = pd.DataFrame({
             "name": [], "student_id": [], "status": [], "timestamp": [], "location": []
         })
         df.to_csv(attendance_file, index=False)
